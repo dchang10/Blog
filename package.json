@@ -1,4 +1,5 @@
 {
+  "homepage": "http://dchang10.github.io/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -42,7 +43,7 @@
   },
   "scripts": {
     "restart": "pm2 startOrRestart ecosystem.config.js",
-    "deploy": "pm2 deploy ecosystem.config.js production",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -53,6 +54,6 @@
     "url": "git:github.com/Dchang10/Blog.git"
   },
   "devDependencies": {
-    "pm2": "^2.10.4"
+    "gh-pages": "^2.2.0"
   }
 }

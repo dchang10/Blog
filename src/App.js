@@ -98,27 +98,23 @@ class App extends Component {
         return(
         <Fragment>
             <div style={{minHeight:'60em'}}>
-                <Router>
-                    <Fragment>
-                        <NavigationBar/>
-                        <div style={{padding:'1.5em'}}/>
-                        <Switch>
-                            <ScrollToTopRoute path="/p/:page" component={Home} authenticated={this.state.authenticated}/>
-                            <Redirect exact from="/" to="/p/1"/>
-                            <ScrollToTopRoute path="/pages/hydrogenAtom" component={HydrogenAtom} />
-                            <ScrollToTopRoute path="/pages/Login" component={Login} 
-                                authenticate={this.authenticate} 
-                                authenticated={this.state.authenticated} 
-                                username={this.state.username} 
-                                password={this.state.password}/>
-                            <ScrollToTopRoute path="/post/:slug" component={BlogPost} 
-                                authenticated={this.state.authenticated} 
-                                username={this.state.username} 
-                                password={this.state.password}/>
-                            <ScrollToTopRoute path ="/404" component={NotFound} />
-                        </Switch>
-                    </Fragment>
-                </Router>
+                <NavigationBar/>
+                <div style={{padding:'1.5em'}}/>
+                <Switch>
+                    <ScrollToTopRoute path="/p/:page" component={Home} authenticated={this.state.authenticated}/>
+                    <Redirect exact from="/" to="/p/1"/>
+                    <ScrollToTopRoute path="/pages/hydrogenAtom" component={HydrogenAtom} />
+                    <ScrollToTopRoute path="/pages/Login" component={Login} 
+                        authenticate={this.authenticate} 
+                        authenticated={this.state.authenticated} 
+                        username={this.state.username} 
+                        password={this.state.password}/>
+                    <ScrollToTopRoute path="/post/:slug" component={BlogPost} 
+                        authenticated={this.state.authenticated} 
+                        username={this.state.username} 
+                        password={this.state.password}/>
+                    <ScrollToTopRoute path ="/404" component={NotFound} />
+                </Switch>
             </div>
             <footer>
                 <Footer/>
