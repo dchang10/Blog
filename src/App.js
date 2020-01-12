@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import HydrogenAtom from './scenes/hydrogenAtom/components/HydrogenAtom';
 import Home from './scenes/Home/components/Home';
 import Login from './scenes/Login/components/Login';
 import BlogPost from './scenes/Posts/components/BlogPost';
@@ -29,9 +28,6 @@ class NavigationBar extends Component{
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className="nav-item">
                             <Link className="nav-link" to="/" style={{padding:'1em 0em 1em 1em'}}>Home<span className="sr-only">(current)</span></Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/pages/hydrogenAtom" style={{padding:'1em 0em 1em 1em'}}>Hydrogen Atom</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/pages/Login" style={{padding:'1em 0em 1em 1em'}}>Login</Link>
@@ -104,7 +100,6 @@ class App extends Component {
                         <Switch>
                             <ScrollToTopRoute path="/p/:page" component={Home} authenticated={this.state.authenticated}/>
                             <Redirect exact from="/" to="/p/1"/>
-                            <ScrollToTopRoute path="/pages/hydrogenAtom" component={HydrogenAtom} />
                             <ScrollToTopRoute path="/pages/Login" component={Login} 
                                 authenticate={this.authenticate} 
                                 authenticated={this.state.authenticated} 
