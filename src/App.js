@@ -27,7 +27,10 @@ class NavigationBar extends Component{
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/" style={{padding:'1em 0em 1em 1em'}}>Home<span className="sr-only">(current)</span></Link>
+                            <Link className="nav-link" to="/blog" style={{padding:'1em 0em 1em 1em'}}>Home<span className="sr-only">(current)</span></Link>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/HydrogenAtom" style={{padding:'1em 0em 1em 1em'}}>Hydrogen Atom<span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/pages/Login" style={{padding:'1em 0em 1em 1em'}}>Login</Link>
@@ -99,7 +102,7 @@ class App extends Component {
                         <div style={{padding:'1.5em'}}/>
                         <Switch>
                             <ScrollToTopRoute path="/p/:page" component={Home} authenticated={this.state.authenticated}/>
-                            <Redirect exact from="/" to="/p/1"/>
+                            <Redirect exact from="/blog" to="/p/1"/>
                             <ScrollToTopRoute path="/pages/Login" component={Login} 
                                 authenticate={this.authenticate} 
                                 authenticated={this.state.authenticated} 
@@ -109,7 +112,7 @@ class App extends Component {
                                 authenticated={this.state.authenticated} 
                                 username={this.state.username} 
                                 password={this.state.password}/>
-                            <ScrollToTopRoute path ="/404" component={NotFound} />
+                            <Route component={NotFound} />
                         </Switch>
                     </div>
                     <footer>

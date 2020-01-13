@@ -1,6 +1,6 @@
 {
-  "homepage": "http://dchang10.github.io/",
-  "name": "my-app",
+  "homepage": "http://dchang10.github.io/Blog",
+  "name": "Blog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,7 +42,6 @@
     "three-orbit-controls": "^82.1.0"
   },
   "scripts": {
-    "restart": "pm2 startOrRestart ecosystem.config.js",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "start": "react-scripts start",
